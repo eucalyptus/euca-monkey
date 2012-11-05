@@ -92,7 +92,24 @@ Run the Installer for euca-monkey-webserice
 ./installer-euca-monkey-webservice.py
 </code>
 
-### Step 6.
+## Step 6.
+Check out the euca-monkey.php page on the Browser to ensure that httpd is running correctly.
+
+Ex.
+
+<code>
+http://192.168.51.84/euca-monkey.php
+</code>
+
+, where 192.168.51.84 is the IP of your Tester machine.
+
+If you cannot see the monkeys, check out your firewall setting and disable it:
+
+<code>
+system-config-firewall-tui
+</code>
+
+### Step 7.
 
 Go to the Directory "launch_euca_monkey"
 
@@ -100,7 +117,8 @@ Go to the Directory "launch_euca_monkey"
 cd ./launch_euca_monkey
 </code>
 
-### Step 7.
+### Step 8.
+
 Configure the Euca Monkey Environement Files, "2b_tested.lst" and "generator.ini" in "./conf" Directory
 
 <code>
@@ -123,7 +141,7 @@ Ex.
 wget http://10.1.1.210/test_space/UI-src-centos6-01/1021/load_image_test/input/2b_tested.lst
 </code>
 
-### Step 8.
+### Step 9.
 Launch the Euca Monkey
 
 <code>
@@ -134,8 +152,8 @@ cd ..
 ./launch-euca-monkey.py
 </code>
 
-## Step 9.
-Check out the Progress on the Browser
+### Step 10.
+Watch the Progress on the Browser
 
 Ex.
 

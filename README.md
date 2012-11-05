@@ -92,7 +92,7 @@ Run the Installer for euca-monkey-webserice
 ./installer-euca-monkey-webservice.py
 </code>
 
-## Step 6.
+### Step 6.
 Check out the euca-monkey.php page on the Browser to ensure that httpd is running correctly.
 
 Ex.

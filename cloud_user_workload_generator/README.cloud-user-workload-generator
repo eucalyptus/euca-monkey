@@ -1,0 +1,12 @@
+
+### MODIFY PARAMETERS IN generator.ini
+vim ./conf/generator.ini
+
+### RUN THE WORKLOAD GENERATOR 
+nohup ./cloud-user-workload-generator.pl > workload.out 2> workload.out & 
+
+### PLOT DATE
+cd plot_cloud_user_data/
+./generate_actual_cloud_data_graph.pl ../log-ACCT-cloud-user-test-acct-00-USER-cloud-user-00-TS-2012-11-01\:20\:01\:50/
+./generate_cloud_user_data_graph.pl ../log-ACCT-cloud-user-test-acct-00-USER-cloud-user-00-TS-2012-11-01\:20\:01\:50/
+

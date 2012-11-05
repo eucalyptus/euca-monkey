@@ -1,0 +1,43 @@
+
+=== cloud-resource-populator ===
+
+A simple CLI tool to populate Eucalyptus resources with quickness
+
+
+
+=== Requirement ===
+
+1. Source Virtual Environment
+
+source ../myvirtualenv/bin/activate
+
+2 .Create Test Configuration File "2b_tested.lst"
+
+Download it if your system is built by QA system:
+
+Ex. wget http://10.1.1.210/test_space/UI-src-centos6-01/1021/load_image_test/input/2b_tested.lst
+
+If not, create your own:
+
+<sample>
+192.168.51.37	CENTOS	6.3	64	BZR	[UI CC00 CLC SC00 WS]
+192.168.51.38	CENTOS	6.3	64	BZR	[NC00]
+</sample>
+
+
+
+=== Usage ===
+
+== Populate Resources ==
+
+ ./cloud-resource-populator.py --accountname ui-test-acct-23 --username user23 --password mypassword23 --running-instance-count 2 --volume-count 2 --snapshot-count 2 --keypair-count 3 --security-group-count 2 --ip-count 2 --create-bfebs 0
+
+== Display Resources ==
+
+./cloud-resource-populator.py --accountname ui-test-acct-23 --username user23 --password mypassword23 --display-resources 1
+
+== Clear Resources ==
+
+./cloud-resource-populator.py --accountname ui-test-acct-23 --username user23 --password mypassword23 --clear-resources 2
+
+

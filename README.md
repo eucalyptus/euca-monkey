@@ -79,6 +79,7 @@ cd ./euca-monkey
 
 ### Step 4.
 Run the Installer for cloud-resource-populator
+  * Ignore the "next steps" instructions at the end of this script run.
 
 <code>
 ./installer-cloud-resource-populator.py

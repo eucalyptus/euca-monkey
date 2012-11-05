@@ -120,6 +120,7 @@ cd ./launch_euca_monkey
 ### Step 8.
 
 Configure the Euca Monkey Environement Files, "2b_tested.lst" and "generator.ini" in "./conf" Directory
+  * See the CONFIGURATION FILE section above
 
 <code>
 cd ./conf

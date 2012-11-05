@@ -14,9 +14,11 @@ if( @ARGV < 1 ){
 
 my $data_dir = shift @ARGV;
 
-my $scr_name = "gnuplot_script_actual_cloud_display.script";
-my $data_name = "actual_cloud_display.log";
-my $png_name = "actual_cloud_display.png";
+system("./create_accumul_actual_cloud_user_data.pl $data_dir");
+
+my $scr_name = "gnuplot_script_accumul_actual_cloud_display.script";
+my $data_name = "accumul_actual_cloud_display.log";
+my $png_name = "accumul_actual_cloud_display.png";
 
 my $scr_loc = $gnuplot_scripts_dir . "/" . $scr_name;
 my $png_loc = $graphs_dir . "/" . $png_name;
@@ -42,8 +44,14 @@ $y_max = $y_max + 4;
 
 print "MAX Y RANGE: $y_max\n";
 
+my $ytics = 10;
+
+if( int($y_max / 10) > $ytics ){
+	$ytics = int($y_max/10);
+};
+
 print "\n";
-print "================= PLOT ACTUAL CLOUD DISPLAY  =====================\n";
+print "================= PLOT ACCUMUL. ACTUAL RESOURCES  =====================\n";
 print "\n";
 
 system("mkdir -p $gnuplot_scripts_dir");
@@ -51,7 +59,7 @@ system("mkdir -p $graphs_dir");
 
 open( SCR, "> $scr_loc" ) or die $!;
 
-print SCR "set title \"EUCA MONKEY: ACTUAL CLOUD DISPLAY\"\n";
+print SCR "set title \"EUCA MONKEY: ACCUMUL. ACTUAL RESOURCES\"\n";
 print SCR "set key outside top\n";
 print SCR "set border linewidth 2\n";
 print SCR "set xdata time\n";
@@ -59,8 +67,8 @@ print SCR "set timefmt \"%Y-%m-%d:%H:%M:%S\"\n";
 print SCR "set xlabel \"MINUTE\"\n";
 print SCR "set format x \"%M\"\n";
 print SCR "set ylabel \"COUNT\"\n";
-print SCR "set ytics 0, 2\n";
-print SCR "set yrange [-1:" . $y_max . "]\n";
+print SCR "set ytics 0, " . $ytics . "\n";
+print SCR "set yrange [-2:" . $y_max . "]\n";
 print SCR "set terminal png size 1200, 800\n";
 print SCR "set output \"" . $png_loc ."\"\n";
 print SCR "plot \"" . $data_loc . "\" using 1:5 title \"Running Instances\" with lines,";

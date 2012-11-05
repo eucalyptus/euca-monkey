@@ -21,6 +21,10 @@ print $latest_log_dir . "\n";
 
 my $render_cloud_input = "cd $PLOT_DIR; ./generate_cloud_user_data_graph.pl ../$latest_log_dir";
 my $render_actual_resource = "cd $PLOT_DIR; ./generate_actual_cloud_data_graph.pl ../$latest_log_dir";
+my $render_accumul_resource = "cd $PLOT_DIR; ./generate_accumul_actual_cloud_data_graph.pl ../$latest_log_dir";
+
+my $render_cloud_input_for_last_40 = "cd $PLOT_DIR; ./generate_cloud_user_data_graph_for_last_40_records.pl ../$latest_log_dir";
+my $render_actual_resource_for_last_40 = "cd $PLOT_DIR; ./generate_actual_cloud_data_graph_for_last_40_records.pl ../$latest_log_dir";
 
 my $copy_graphs_over_to_html = "cp -f $GRAPH_DIR/* $HTML_GRAPH_DIR/.";
 
@@ -30,10 +34,14 @@ while(1){
 	print print_time();
 	run_cmd($render_cloud_input);
 	run_cmd($render_actual_resource);
+	run_cmd($render_accumul_resource);
+	run_cmd($render_cloud_input_for_last_40);
+	run_cmd($render_actual_resource_for_last_40);
+
 	run_cmd($copy_graphs_over_to_html);
 
 	print "\n";
-	print "Sleeping for 2 Min..\n";
+	print "Sleeping for 1 Min..\n";
 	sleep(120);
 	print "\n";
 };

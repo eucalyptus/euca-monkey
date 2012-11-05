@@ -8,19 +8,21 @@ my $gnuplot_scripts_dir = $this_dir ."/gnuplot_scripts";
 my $graphs_dir = $this_dir . "/graphs";
 
 if( @ARGV < 1 ){
-        print "Need 1 Input: <directory_of_cloud_user_logs>\n";
-        exit(1);
+	print "Need 1 Input: <directory_of_cloud_user_logs>\n";
+	exit(1);
 };
 
 my $data_dir = shift @ARGV;
 
-my $scr_name = "gnuplot_script_actual_cloud_display.script";
-my $data_name = "actual_cloud_display.log";
-my $png_name = "actual_cloud_display.png";
+my $scr_name = "gnuplot_script_cloud_user_input_for_last_40.script";
+my $data_name = "cloud_user_input_for_last_40.log";
+my $png_name = "cloud_user_input_for_last_40.png";
 
 my $scr_loc = $gnuplot_scripts_dir . "/" . $scr_name;
 my $png_loc = $graphs_dir . "/" . $png_name;
 my $data_loc = $data_dir . "/" . $data_name;
+
+system("cd $data_dir; tail -n 40 cloud_user_input.log > ./$data_name");
 
 if( !(-e "$data_loc" ) ){
 	print "[ERROR] Cannot locate data file $data_loc\n";
@@ -43,7 +45,7 @@ $y_max = $y_max + 4;
 print "MAX Y RANGE: $y_max\n";
 
 print "\n";
-print "================= PLOT ACTUAL CLOUD DISPLAY  =====================\n";
+print "================= PLOT CLOUD USER INPUT FOR LAST 40 =====================\n";
 print "\n";
 
 system("mkdir -p $gnuplot_scripts_dir");
@@ -51,7 +53,7 @@ system("mkdir -p $graphs_dir");
 
 open( SCR, "> $scr_loc" ) or die $!;
 
-print SCR "set title \"EUCA MONKEY: ACTUAL CLOUD DISPLAY\"\n";
+print SCR "set title \"EUCA MONKEY: CLOUD USER INPUT FOR LAST 40\"\n";
 print SCR "set key outside top\n";
 print SCR "set border linewidth 2\n";
 print SCR "set xdata time\n";

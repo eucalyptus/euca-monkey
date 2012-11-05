@@ -1,9 +1,9 @@
-
 # EUCA MONKEY
 
-Eucalyptus Stress Tester with Webservice Rendering Support
+Eucalyptus Stress Tester with Webservice Rendering Support, which is based on cloud-resource-populator, which runs on Eutester.
 
-## Requirement
+
+## REQUIREMENT
 
   * Centos 6.3 Machine
   * Running Eucalyptus System Build by the QA System

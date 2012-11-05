@@ -67,7 +67,7 @@ yum -y install git
 Clone euca-monkey
   
 <code>
-git clone kyolee@git.eucalyptus-systems.com:/mnt/repos/qa/others/euca-monkey
+git clone git://github.com/eucalyptus/euca-monkey.git
 </code>
 
 ### Step 3.

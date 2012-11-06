@@ -123,15 +123,11 @@ Configure the Euca Monkey Environement Files, "2b_tested.lst" and "generator.ini
   * See the CONFIGURATION FILE section above
 
 <code>
-cd ./conf
+vim ./conf/2b_tested.lst
 </code>
 
 <code>
-vim ./2b_tested.lst
-</code>
-
-<code>
-vim ./generator.ini
+vim ./conf/generator.ini
 </code>
 
 Or, Download 2b_tested.lst File Directly
@@ -139,15 +135,15 @@ Or, Download 2b_tested.lst File Directly
 Ex.
 
 <code>
+cd ./conf
+</code>
+
+<code>
 wget http://10.1.1.210/test_space/UI-src-centos6-01/1021/load_image_test/input/2b_tested.lst
 </code>
 
 ### Step 9.
 Launch the Euca Monkey
-
-<code>
-cd ..
-</code>
 
 <code>
 ./launch-euca-monkey.py

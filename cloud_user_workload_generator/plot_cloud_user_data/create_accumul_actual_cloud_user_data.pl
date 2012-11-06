@@ -36,7 +36,7 @@ my $line;
 while($line=<DATA>){
 	chomp($line);
 #	print $line . "\n";
-	if( $line =~ /^(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/){
+	if( $line =~ /^(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/){
 		if( $is_populate_run == 0 ){
 			$is_populate_run = 1;
 			$ts = $1;

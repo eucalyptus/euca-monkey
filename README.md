@@ -21,7 +21,7 @@
     * Format - the items need to be separated by tabs:
 <pre>
 192.168.51.37 CENTOS	6.3	64	BZR	[UI CC00 CLC SC00 WS]
-192.168.51.38	CENTOS	6.3	64	BZR	[NC00]
+192.168.51.38 CENTOS	6.3	64	BZR	[NC00]
 </pre>
 
   * If built by the QA System, it can be easibly obtainable via a URL:

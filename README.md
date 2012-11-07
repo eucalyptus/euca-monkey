@@ -9,8 +9,15 @@
   * 1 Tester Machine - Centos 6.3 Machine/VM
     * Port 80 Open         
   * Running Eucalyptus System
-    * CLC machine needs to be accessble from the Tester Machine above, via pub-key exchange.
-      * i.e. Eucalyptus built by the QA System 
+    * CLC machine needs to be accessble from the Tester Machine above, via **pub-key exchange**.
+      * On Tester Machine,
+<code>
+cat ~/.ssh/id_rsa.pub
+</code>
+      * On CLC Machine,
+<code>
+vim ~/.ssh/authorized_keys
+</code>
     * Eucalyptus must be Loaded with, at least, one Public Instance Image
 
 ## CONFIGURATION FILE
@@ -24,10 +31,8 @@
 192.168.51.38 CENTOS	6.3	64	BZR	[NC00]
 </pre>
 
-  * If built by the QA System, it can be easibly obtainable via a URL:
-
-Example.
-
+    * For internal QA machines, it can be easibly obtainable via test config URL:
+      * Example.
 <code>
 wget http://10.1.1.210/test_space/UI-src-centos6-01/1021/load_image_test/input/2b_tested.lst
 </code>
@@ -93,15 +98,12 @@ Run the Installer for euca-monkey-webserice
 </code>
 
 ### Step 6.
-Check out the euca-monkey.php page on the Browser to ensure that httpd is running correctly.
-
-Ex.
+Check out **euca-monkey.php** page on a web-browser to ensure that httpd is running correctly.
 
 <code>
 http://192.168.51.84/euca-monkey.php
 </code>
-
-, where 192.168.51.84 is the IP of your Tester machine.
+  * where 192.168.51.84 is the IP of your Tester machine.
 
 If you cannot see the monkeys, check out your firewall setting and disable it:
 
@@ -130,19 +132,8 @@ vim ./conf/2b_tested.lst
 vim ./conf/generator.ini
 </code>
 
-Or, Download 2b_tested.lst File Directly
-
-Ex.
-
-<code>
-cd ./conf
-</code>
-
-<code>
-wget http://10.1.1.210/test_space/UI-src-centos6-01/1021/load_image_test/input/2b_tested.lst
-</code>
-
 ### Step 9.
+
 Launch the Euca Monkey
 
 <code>
@@ -150,13 +141,11 @@ Launch the Euca Monkey
 </code>
 
 ### Step 10.
-Watch the Progress on the Browser
 
-Ex.
+Watch the Progress on the Browser
 
 <code>
 http://192.168.51.84/euca-monkey.php
 </code>
-
-, where 192.168.51.84 is the IP of your Tester machine.
+  * where 192.168.51.84 is the IP of your Tester machine.
 

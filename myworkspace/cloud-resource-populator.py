@@ -218,7 +218,7 @@ def create_bfebs_image_as_user(user, keypair, security_group, zone):
     this_volume_device_after_attach = "/dev/" + new_devices[0].strip()
     this_bfebs_img_url = "http://mirror.qa.eucalyptus-systems.com/bfebs-image/vmware/bfebs_vmwaretools.img"
     this_instance.sys("curl " + this_bfebs_img_url + " > " + this_volume_device_after_attach, timeout=800)
-    this_snapshot = user.create_snapshot(this_volume.id, waitOnProgress=10)
+    this_snapshot = user.create_snapshot(this_volume.id)
     this_image_id = user.register_snapshot(this_snapshot)
     this_image = user.get_emi(this_image_id)
     print

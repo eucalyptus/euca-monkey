@@ -149,3 +149,10 @@ http://192.168.51.84/euca-monkey.php
 </code>
   * where 192.168.51.84 is the IP of your Tester machine.
 
+## CONTACT
+
+Please feel free to contact the contributors if you have any questions or issues with Euca Monkey:
+
+Kyo Lee
+
+kyo.lee@eucalyptus.com

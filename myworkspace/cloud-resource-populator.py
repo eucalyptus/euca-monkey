@@ -236,7 +236,7 @@ def create_volume_for_given_count(user, zone, count):
     print "ZONE: " + zone
     print
     for i in xrange(count):
-	volume = user.create_volume(azone=zone)
+	volume = user.create_volume(zone)
     return volume
 
 

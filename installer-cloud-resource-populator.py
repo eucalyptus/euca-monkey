@@ -17,7 +17,7 @@ def main():
 	run_cmd("./installer-eutester-env.py");
 
 	### INSTALL GNUPLOT
-	run_cmd("yum -y install gnuplot");
+	run_cmd("sudo yum -y install gnuplot");
 
 	print
 	print "==================================================================================="

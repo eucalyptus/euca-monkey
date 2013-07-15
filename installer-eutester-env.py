@@ -16,15 +16,15 @@ def main():
 	this_virtenv = "myvirtualenv"
 
 	### INSTALL DEPENDENCIES
-	run_cmd("yum -y update");
-	run_cmd("yum -y install git gcc python-paramiko python-devel");
+	run_cmd("sudo yum -y update");
+	run_cmd("sudo yum -y install git gcc python-paramiko python-devel ntpdate zip unzip");
 	
 	### NTP SYNC
-	run_cmd("ntpdate 192.168.51.150");
+	run_cmd("sudo ntpdate ntp.ubuntu.com");
 
 	### SET UP VIRTUALENV
-	run_cmd("yum -y install python-setuptools");
-	run_cmd("easy_install virtualenv");
+	run_cmd("sudo yum -y install python-setuptools");
+	run_cmd("sudo easy_install virtualenv");
 	run_cmd("mkdir -p " + this_virtenv);
 	run_cmd("virtualenv " + this_virtenv);
 	

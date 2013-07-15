@@ -26,6 +26,7 @@ def main():
 	print 
 
 	print "HOW TO RUN CLOUD-RESOURCE-POPULATOR"
+	print "Step 0. Be sure that this machine has ssh access to the CLC machine"
 	print
 	print "Step 1. Activate Virtualenv"
 	print

@@ -34,7 +34,7 @@ def main():
 
 	print "Step 2. Go to the Directory ./myworkspace"
 	print
-	print "cd ./myworksapce"
+	print "cd ./myworkspace"
 	print
 
 	print "Step 3. Download the Test Configuration File via 'wget'"
